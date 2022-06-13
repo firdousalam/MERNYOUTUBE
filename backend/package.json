@@ -1,0 +1,26 @@
+{
+  "name": "nodejs_backend",
+  "version": "1.0.0",
+  "description": "backend api using nodejs and mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firdousalam/MERNYOUTUBE.git"
+  },
+  "keywords": [
+    "nodejs",
+    "reactjs",
+    "mongodb",
+    "mern",
+    "stack"
+  ],
+  "author": "Firdous Alam https://www.youtube.com/c/TechnophileFirdous",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firdousalam/MERNYOUTUBE/issues"
+  },
+  "homepage": "https://github.com/firdousalam/MERNYOUTUBE#readme"
+}
