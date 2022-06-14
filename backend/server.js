@@ -10,7 +10,6 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-
 const uri = process.env.ATLAS_URI;
 /*
 console.log(uri);
@@ -43,7 +42,6 @@ client.connect(err => {
   client.close();
 });
 */
-
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
