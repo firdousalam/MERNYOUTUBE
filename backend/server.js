@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
-
 require('dotenv').config();
 
 const PORT = process.env.PORT || 5000;
@@ -16,7 +15,6 @@ const uri = process.env.ATLAS_URI;
 console.log(uri);
 mongoose.connect(uri,{useNewUrlParser : true,useCreateIndex : true});
 const connection = mongoose.connection;
-
 connection.once('open',() =>{
     console.log("MongoDB Database connection Established sucessfully");
 })
@@ -30,6 +28,12 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true})
 }).catch((err) =>{
     console.log(err,"error");
 })
+const exerciseRoute = require("./route/exercise");
+const userRoute = require("./route/users");
+
+
+app.use('/exercises',exerciseRoute);
+app.use('/users',userRoute);
 /*
 client.connect(err => {
     console.log(err,"error");
