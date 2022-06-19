@@ -13,19 +13,20 @@ import ExercisesList from "./components/ExerciseList.component";
 import EditExercise from "./components/EditExercise.component";
 import CreateExercise from "./components/CreateExercise.component";
 import CreateUser from "./components/CreateUser.component";
-
 function App() {
   return (
-    <div className="container">
+    
       <Router>
+        <div className="container">
         <Navbar />
         <Switch>
           <Route path="/create" element={<CreateExercise />} />
           <Route path="/user" element={<CreateUser />} />
           <Route path="/" element={<ExercisesList />} />
         </Switch>
+        </div>
       </Router>
-    </div>
+   
   );
 }
 
