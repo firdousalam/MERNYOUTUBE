@@ -4,8 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {
   BrowserRouter as Router,
   Routes as Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import Navbar from "./components/navbar.component"
@@ -23,6 +22,9 @@ function App() {
           <Route path="/create" element={<CreateExercise />} />
           <Route path="/user" element={<CreateUser />} />
           <Route path="/" element={<ExercisesList />} />
+          <Route path="/edit/:id" element={<EditExercise />} />
+          
+
         </Switch>
         </div>
       </Router>
