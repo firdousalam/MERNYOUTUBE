@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
+import axios from 'axios';
 
 export default class CreateExercise extends Component {
     constructor(props) {
@@ -19,12 +20,27 @@ export default class CreateExercise extends Component {
             users: []
         }
     }
-    componentDidMount() {
-        this.setState({
-            users: ['test user'],
-            username: 'test user'
+    componentDidMount() {(
+        axios.get('http://localhost:5000/users')
+        .then(Response =>{
+            if(Response.data.length>0){
+                console.log(Response.data);
+                this.setState({
+                    users : Response.data.map(user => user.username),
+                    username: Response.data[0].username
+                })
+            }else{
+                this.setState({
+                    users: ['test user'],
+                    username: 'test user'
+                })
+            }
         })
-    }
+
+
+
+       
+    )}
     onChangedescription(e) {
         this.setState({
             description: e.target.value
@@ -55,6 +71,8 @@ export default class CreateExercise extends Component {
             date: this.state.date
         }
         console.log(exercise);
+        axios.post('http://localhost:5000/exercises/add',exercise)
+        .then(res => console.log(res.data));
         alert("data submitted")
       //  window.location = "/";
     }
