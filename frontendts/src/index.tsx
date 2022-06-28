@@ -4,6 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+/**font awesome */
+import '../node_modules/font-awesome/css/font-awesome.css';
+
+/**Bootstraps */
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
